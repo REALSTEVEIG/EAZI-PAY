@@ -2,7 +2,7 @@
 
 ## Introduction
 
-I completed this project as part of the application process for the Junior Back-end Engineer role at Eazipay. The project's goal was to create two services: one for a basic GraphQL backend and the other for managing MongoDB schema models and GraphQL type definitions. The GraphQL service also needed to include authentication endpoints (Signup & Login) and update its schema and types automatically when changes occurred in the second service.
+I completed this project as part of the application process for the Back-end Engineer role at Eazipay. The project's goal was to create two services: one for a basic GraphQL backend and the other for managing MongoDB schema models and GraphQL type definitions. The GraphQL service also needed to include authentication endpoints (Signup & Login) and update its schema and types automatically when changes occurred in the second service.
 
 ## Project Structure
 
@@ -98,4 +98,4 @@ Feel free to review the code, test the application, and reach out if you have an
 
 Best regards,
 
-Stephen Ignatius
+Stephen Ignatius.
