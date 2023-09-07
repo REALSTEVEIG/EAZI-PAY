@@ -1,0 +1,19 @@
+name: Update GraphQL Type Definitions
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-graphql-typedefs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Copy typedefs
+        run: |
+          cp ./mongodb-service/typedef.graphql ./graphql-service/typedef.graphql
+        shell: bash
