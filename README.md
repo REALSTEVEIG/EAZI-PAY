@@ -61,6 +61,8 @@ In development mode, the script is activated as follows:
         require('./watchtypedefs');
         }
     ```
+In development the file responsible for the automatic updates is `./graphql-service/watchtypedefs.js`. In production, the file responsible for the automatic updates is `./.github/workflows/ci/cd.yml`.
+
 
 ### Continuous Integration and Deployment (CI/CD)
 The project is set up for continuous integration and deployment (CI/CD) using GitHub Actions. Deployment to a production environment is triggered automatically when changes are pushed to the main branch.
