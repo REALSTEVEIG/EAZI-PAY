@@ -1,19 +1,44 @@
-name: Update GraphQL Type Definitions
+name: CI/CD
 
 on:
   push:
     branches:
-      - main
+      - main  
 
 jobs:
-  update-graphql-typedefs:
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18 
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test 
+
       - name: Copy typedefs
         run: |
           cp ./mongodb-service/typedef.graphql ./graphql-service/typedef.graphql
         shell: bash
+
+      - name: Build
+        run: npm run build 
+      - name: Deploy
+        run: |
+          if [ "${{ github.event_name }}" == "push" ] && [ "${{ github.ref }}" == "refs/heads/main" ]; then
+            # Add your deployment commands here
+            # Example:
+            # npm run deploy
+          else
+            echo "Deployment not triggered. Branch or event doesn't match conditions."
+          fi
+        env:
+          NODE_ENV: production 
